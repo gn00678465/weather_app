@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+Future<Map<Permission, PermissionStatus>> _permission() async {
+  if (await Permission.contacts.request().isGranted) {
+    // Either the permission was already granted before or the user just granted it.
+  }
+
+  // You can request multiple permissions at once.
+  Map<Permission, PermissionStatus> statuses = await [
+    Permission.location,
+  ].request();
+
+  return statuses;
+}
 
 void runWithAppConfig() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await _permission();
 
   runApp(const App());
 }
