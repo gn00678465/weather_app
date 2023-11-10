@@ -121,12 +121,12 @@ class WeatherModel {
 
     if (t > weather.sunrise && t < weather.sunset) {
       if (weather.weather == 'Clouds') {
-        return const AssetImage('assets/images/cloudy.png');
+        return const AssetImage('assets/images/cloudy.webp');
       } else {
-        return const AssetImage('assets/images/sunny.png');
+        return const AssetImage('assets/images/sunny.webp');
       }
     } else {
-      return const AssetImage('assets/images/night.png');
+      return const AssetImage('assets/images/night.webp');
     }
   }
 }
