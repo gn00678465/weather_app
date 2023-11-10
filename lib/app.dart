@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import 'views/screens/splash.dart';
 import 'package:weather_app/providers/providers.dart';
 import 'package:weather_app/views/screens/weather_list.dart';
 import 'package:weather_app/providers/location_provider.dart';
@@ -91,11 +92,13 @@ class App extends StatelessWidget {
 }
 
 class Router {
+  Router._();
+
   static String home = '/';
   static String current = '/current';
 
   static Map<String, WidgetBuilder> routes = {
-    home: (context) => const WeatherList(),
+    home: (context) => const SplashPage(),
     current: (context) => const WeatherList(),
   };
 

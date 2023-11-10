@@ -93,8 +93,7 @@ class WeathersNotifier extends StateNotifier<List<WeatherModel?>> {
 }
 
 final weathersProvider =
-    StateNotifierProvider.autoDispose<WeathersNotifier, List<WeatherModel?>>(
-        (ref) {
+    StateNotifierProvider<WeathersNotifier, List<WeatherModel?>>((ref) {
   final sharedPrefs = ref.watch(sharedPreferencesProvider);
 
   final weatherNotifier = WeathersNotifier(sharedPrefs: sharedPrefs);
